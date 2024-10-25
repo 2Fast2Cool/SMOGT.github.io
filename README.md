@@ -1,1 +1,1 @@
-# 2Fast2Cool-SMOGT.github.io
+# Welecome To Super Mario Odyssey Google Translate (SMOGT) Website
