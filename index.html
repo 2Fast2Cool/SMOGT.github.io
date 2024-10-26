@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Mario Odyssey Google Translate (SMOGT) Website</title>
-    <link rel="icon" href="images/Favicon.png" type="image/png"> <!-- Favicon Link -->
+    <link rel="icon" type="image/png" href="images/Favicon.png">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -68,6 +68,30 @@
             background-color: #388E3C;
         }
 
+        .navigate-button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .navigate-button:hover {
+            background-color: #0b7dda;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 150px;
+            padding-bottom: 20px;
+        }
+
         footer {
             text-align: center;
             margin-top: 20px;
@@ -79,9 +103,16 @@
             document.getElementById("content-en").style.display = language === "en" ? "block" : "none";
             document.getElementById("content-fr").style.display = language === "fr" ? "block" : "none";
         }
+
+        function navigateToOther() {
+            window.location.href = 'Other.html';
+        }
     </script>
 </head>
 <body>
+
+    <!-- Logo at the top -->
+    <img src="images/logo.png" alt="SMOGT Logo" class="logo">
 
     <!-- Language Toggle Buttons -->
     <div>
@@ -101,45 +132,10 @@
             <h2><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h2>
         </section>
 
-        <h1>If you Need Help Use the <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h1>
+        <h1>If you Need Help Use the <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h1> and look at FAQ before you put it on the discord
+				 <!-- Navigation Button to Index -->
+        <a href="FAQ.html" class="navigate-button">FAQ</a>
 
-        <section>
-            <h2>For Emulator Users File Structure</h2>
-            <p>├── &lt;folder-name&gt;</p>
-            <p>│ &nbsp; └── romfs</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p><br>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-        </section>
-
-        <section>
-            <h2>For Switch Users File Structure</h2>
-            <p>│ &nbsp; └── atmosphere</p>
-            <p>│ &nbsp; └── contents</p>
-            <p>│ &nbsp; └── 0100000000010000</p>
-            <p>│ &nbsp; └── romfs</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p>}<br>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-        </section>
-
-        <h1>READ THIS IF you're going to put this in a YouTube Video</h1>
-        <h1>You MUST put the link to the download, credit Umm12Many or SMOGT TEAM, and put a link to the trailer for the mod.</h1>
-
-        <section>
-            <h1>Policy</h1>
-            <h2>NO pirating. Do not re-upload content that doesn’t belong to you. Unauthorized redistribution will not be tolerated.</h2>
-        </section>
 
         <section>
             <h1>Download</h1>
@@ -148,6 +144,7 @@
             <div style="background-color: #333; border-radius: 5px; width: 100%; padding: 5px;">
                 <div style="width: 90%; background-color: #4caf50; color: white; text-align: center; padding: 10px 0; border-radius: 5px;">90%</div>
             </div>
+            <button class="navigate-button" onclick="navigateToOther()">Other Downloads</button>
         </section>
 
         <footer>
@@ -170,54 +167,17 @@
         <h1>Si vous avez besoin d'aide, utilisez le <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h1>
 
         <section>
-            <h2>Pour les utilisateurs d'émulateurs, structure des fichiers</h2>
-            <p>├── &lt;nom-du-dossier&gt;</p>
-            <p>│ &nbsp; └── romfs</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p><br>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-        </section>
-
-        <section>
-            <h2>Pour les utilisateurs de Switch, structure des fichiers</h2>
-            <p>│ &nbsp; └── atmosphere</p>
-            <p>│ &nbsp; └── contents</p>
-            <p>│ &nbsp; └── 0100000000010000</p>
-            <p>│ &nbsp; └── romfs</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-            <p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
-            <p>}<br>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>
-            <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
-        </section>
-
-        <h1>LIRE CECI SI vous allez le mettre dans une vidéo YouTube</h1>
-        <h1>Vous DEVEZ mettre le lien vers le téléchargement, créditer Umm12Many ou SMOGT TEAM et mettre un lien vers la bande-annonce du mod.</h1>
-
-        <section>
-            <h1>Politique</h1>
-            <h2>Pas de piratage. Ne pas re-télécharger du contenu qui ne vous appartient pas. La redistribution non autorisée ne sera pas tolérée.</h2>
-        </section>
-
-        <section>
             <h1>Télécharger</h1>
-            <h2><a target="_blank" rel="noopener noreferrer" href="https://ckbox.cloud/439170966ddd6d335251/assets/JCnaBAM438Ij/file?download=true" data-ckbox-resource-id="JCnaBAM438Ij">1.1.1 Release (Newest)</a></h2>
-            <h2>Progrès</h2>
+            <h2><a target="_blank" rel="noopener noreferrer" href="https://ckbox.cloud/439170966ddd6d335251/assets/JCnaBAM438Ij/file?download=true" data-ckbox-resource-id="JCnaBAM438Ij">Version 1.1.1 (la plus récente)</a></h2>
+            <h2>Progression</h2>
             <div style="background-color: #333; border-radius: 5px; width: 100%; padding: 5px;">
                 <div style="width: 90%; background-color: #4caf50; color: white; text-align: center; padding: 10px 0; border-radius: 5px;">90%</div>
             </div>
+            <button class="navigate-button" onclick="navigateToOther()">Autres téléchargements</button>
         </section>
 
         <footer>
-            <p>&copy; 2024 SMOGT Team. Tous droits réservés.</p>
+            <p>&copy; 2024 Équipe SMOGT. Tous droits réservés.</p>
         </footer>
     </div>
 

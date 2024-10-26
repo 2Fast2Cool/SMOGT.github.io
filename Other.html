@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<link rel="icon" type="image/png" href="images/Favicon2.png">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Releases</title>
+    <style>
+        /* Styling for the section with the background */
+        .background-section {
+            background-image: url('images/background.png');
+            background-size: cover; /* Cover the entire div */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Keeps the image in place when scrolling */
+            padding: 20px;
+            color: white; /* Text color for contrast */
+        }
+        
+        /* Additional styling for text and links */
+        a {
+            text-decoration: none;
+            color: #4da6ff; /* Light blue color for links */
+        }
+
+        footer {
+            margin-top: 20px;
+            color: lightgray;
+        }
+
+        .language-toggle {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .language-toggle:hover {
+            background-color: #388E3C;
+        }
+
+        .navigate-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .navigate-button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-section">
+        <h1 id="page-title">Other Releases</h1>
+        <h2 id="previous-title">Previous</h2>
+        <h2>
+            <a target="_blank" rel="noopener noreferrer" href="https://ckbox.cloud/439170966ddd6d335251/assets/zkSqbLWx-gwf/file?download=true" data-ckbox-resource-id="zkSqbLWx-gwf">1.1.0</a>
+        </h2>
+        <h3>
+            <a target="_blank" rel="noopener noreferrer" href="https://ckbox.cloud/439170966ddd6d335251/assets/bNgw3LQvTV3N/file?download=true" data-ckbox-resource-id="bNgw3LQvTV3N">1.0.0</a>
+        </h3>
+        <h2><s id="dev-releases-title">Dev Releases</s></h2>
+        <h3><s id="dev-releases-message">Currently, none :(</s></h3>
+        
+        <!-- Language Toggle Button -->
+        <button class="language-toggle" id="lang-toggle">Switch to French</button>
+        
+        <!-- Navigation Button to Index -->
+        <a href="index.html" class="navigate-button">Go to Main</a>
+        
+        <footer>
+            <p>&copy; 2024 SMOGT Team</p>
+        </footer>
+    </div>
+
+    <script>
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        langToggle.addEventListener('click', () => {
+            const isFrench = langToggle.innerText === 'Switch to French';
+            langToggle.innerText = isFrench ? 'Switch to English' : 'Switch to French';
+
+            // Update text based on selected language
+            document.getElementById('page-title').innerText = isFrench ? 'Autres versions' : 'Other Releases';
+            document.getElementById('previous-title').innerText = isFrench ? 'Précédent' : 'Previous';
+            document.getElementById('dev-releases-title').innerText = isFrench ? 'Versions de développement' : 'Dev Releases';
+            document.getElementById('dev-releases-message').innerText = isFrench ? 'Actuellement, aucun :' : 'Currently, none :(';
+        });
+    </script>
+</body>
+</html>
+

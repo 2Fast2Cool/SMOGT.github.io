@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" type="image/png" href="images/favicon3.png">
+    <!-- Other head elements like title, meta tags, etc. -->
+</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, #8b8cdd, #d6d8f8, #8b8cdd);
+            animation: gradient 15s ease infinite;
+            color: #ffffff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        section {
+            background: rgba(50, 50, 50, 0.8); /* Darker background */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            color: #ffffff; /* Text color */
+        }
+
+        a {
+            color: #ffffff; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: #ffcc00; /* Change color on hover */
+        }
+
+        .watch-trailer {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .watch-trailer:hover {
+            background-color: #ff4500;
+        }
+
+        .language-toggle {
+            margin: 10px 0;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .language-toggle:hover {
+            background-color: #388E3C;
+        }
+
+        .navigate-button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .navigate-button:hover {
+            background-color: #0b7dda;
+        }
+
+        .content {
+            display: none; /* Initially hide the content */
+            margin-top: 10px;
+        }
+        .toggle {
+            cursor: pointer; /* Change cursor to pointer on hover */
+            color: blue; /* Optional styling */
+            text-decoration: underline; /* Optional styling */
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="faq-title">Welcome to FAQ (Frequently Asked Questions)</h1>
+
+<!-- Language Toggle Button -->
+<button class="language-toggle" id="lang-toggle">Switch to French</button>
+
+<!-- FAQ Item 1 -->
+<h2 class="toggle">What If Something Does not Work/Bug?</h2>
+<div class="content">
+    <p>Contact our <h3><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h3></p>
+</div>
+
+<!-- FAQ Item 2 -->
+<h2 class="toggle">If you're having problems With Switch</h2>
+<div class="content">
+    <p>Make sure your file structure is this:</p>
+    <p>Switch users</p>
+    <p>│ &nbsp; └── atmosphere</p>
+    <p>│ &nbsp; └── contents</p>
+    <p>│ &nbsp; └── 0100000000010000</p>
+    <p>│ &nbsp; └── romfs</p>
+    <p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>
+    <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
+    <p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>
+    <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
+    <p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>
+    <p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>
+    <p>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>
+    <p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>
+</div>
+
+<!-- FAQ Item 3 -->
+<h2 class="toggle">If you're Having Problems with Emulators</h2>
+<div class="content">
+    <p>Your Cooked🧑‍🍳.</p>
+</div>
+
+<!-- FAQ Item 4 -->
+<h2 class="toggle">If your game is frozen</h2>
+<div class="content">
+    <p>That's Normal; just wait a while.</p>
+</div>
+
+<!-- FAQ Item 5 -->
+<h2 class="toggle">Balls?</h2>
+<div class="content">
+    <p>Balls.</p>
+</div>
+
+<p>&nbsp;</p>
+<p>© 2024 SMOGT Team. All rights reserved.</p>
+<p>&nbsp;</p>
+
+<!-- Navigation Button to Index -->
+<a href="index.html" class="navigate-button">Go to Main Page</a>
+
+<script>
+    // Select all toggle elements
+    const toggles = document.querySelectorAll('.toggle');
+
+    // Add click event to each toggle
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling; // Select the corresponding content
+            content.style.display = content.style.display === 'none' ? 'block' : 'none'; // Toggle display
+        });
+    });
+
+    // Language toggle functionality
+    const langToggle = document.getElementById('lang-toggle');
+    langToggle.addEventListener('click', () => {
+        const isFrench = langToggle.innerText === 'Switch to French';
+        langToggle.innerText = isFrench ? 'Switch to English' : 'Switch to French';
+
+        // Update text based on selected language
+        document.getElementById('faq-title').innerText = isFrench ? 'Bienvenue dans la FAQ (Questions Fréquemment Posées)' : 'Welcome to FAQ (Frequently Asked Questions)';
+        toggles[0].innerText = isFrench ? 'Que faire si quelque chose ne fonctionne pas / un bogue ?' : 'What If Something Does not Work/Bug?';
+        toggles[1].innerText = isFrench ? 'Si vous avez des problèmes avec Switch' : 'If you\'re having problems With Switch';
+        toggles[2].innerText = isFrench ? 'Si vous avez des problèmes avec des émulateurs' : 'If you\'re Having Problems with Emulators';
+        toggles[3].innerText = isFrench ? 'Si votre jeu est gelé' : 'If your game is frozen';
+        toggles[4].innerText = isFrench ? 'Balles ?' : 'Balls?';
+
+        const content1 = document.querySelectorAll('.content');
+        content1[0].innerHTML = isFrench ? 
+            '<p>Contactez notre <h3><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h3></p>' : 
+            '<p>Contact our <h3><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/FBCRnAGQYp">Discord</a></h3></p>';
+
+        content1[1].innerHTML = isFrench ? 
+            '<p>Assurez-vous que la structure de votre fichier est la suivante :</p>' +
+            '<p>Utilisateurs Switch</p>' +
+            '<p>│ &nbsp; └── atmosphere</p>' +
+            '<p>│ &nbsp; └── contents</p>' +
+            '<p>│ &nbsp; └── 0100000000010000</p>' +
+            '<p>│ &nbsp; └── romfs</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>' : 
+            '<p>Make sure your file structure is this:</p>' +
+            '<p>Switch users</p>' +
+            '<p>│ &nbsp; └── atmosphere</p>' +
+            '<p>│ &nbsp; └── contents</p>' +
+            '<p>│ &nbsp; └── 0100000000010000</p>' +
+            '<p>│ &nbsp; └── romfs</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; ├── SoundData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; └── LocalizedData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; ├── ObjectData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; │ &nbsp; └── ...</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; └── LayoutData</p>' +
+            '<p>│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── ...</p>';
+        
+        content1[2].innerText = isFrench ? 'Votre cuisiné 🧑‍🍳.' : 'Your Cooked 🧑‍🍳.';
+        content1[3].innerText = isFrench ? 'C\'est normal, attendez un moment.' : 'That\'s normal; just wait a while.';
+        content1[4].innerText = isFrench ? 'Balles.' : 'Balls.';
+    });
+</script>
+
+</body>
+</html>
