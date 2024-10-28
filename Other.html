@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<link rel="icon" type="image/png" href="images/Favicon2.png">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Other Releases</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="images/Favicon2.png">
+    <link rel="icon" type="image/png" href="images/favicon3.png">
+
     <style>
-        section {
-            background: rgba(50, 50, 50, 0.8); /* Darker background */
-            border-radius: 10px;
+        /* Styling for the section with the background */
+        .background-section {
+            background-image: linear-gradient(to bottom right, #688bdb, #ea95de, #af90dc), url('images/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             padding: 20px;
-            margin: 10px 0;
-            color: #ffffff; /* Text color */
+            color: white;
+        }
+
         /* Additional styling for text and links */
         a {
             text-decoration: none;
-            color: #4da6ff; /* Light blue color for links */
+            color: #4da6ff;
         }
 
         footer {
@@ -72,7 +80,7 @@
         <button class="language-toggle" id="lang-toggle">Switch to French</button>
         
         <!-- Navigation Button to Index -->
-        <a href="index.html" class="navigate-button">Go to Main</a>
+        <a href="index.html" class="navigate-button" id="navigate-button">Go to Main</a>
         
         <footer>
             <p>&copy; 2024 SMOGT Team</p>
@@ -82,17 +90,19 @@
     <script>
         // Language toggle functionality
         const langToggle = document.getElementById('lang-toggle');
+        const isFrench = () => langToggle.innerText === 'Switch to French';
+        
         langToggle.addEventListener('click', () => {
-            const isFrench = langToggle.innerText === 'Switch to French';
-            langToggle.innerText = isFrench ? 'Switch to English' : 'Switch to French';
+            // Toggle language
+            langToggle.innerText = isFrench() ? 'Switch to English' : 'Switch to French';
 
             // Update text based on selected language
-            document.getElementById('page-title').innerText = isFrench ? 'Autres versions' : 'Other Releases';
-            document.getElementById('previous-title').innerText = isFrench ? 'Précédent' : 'Previous';
-            document.getElementById('dev-releases-title').innerText = isFrench ? 'Versions de développement' : 'Dev Releases';
-            document.getElementById('dev-releases-message').innerText = isFrench ? 'Actuellement, aucun :' : 'Currently, none :(';
+            document.getElementById('page-title').innerText = isFrench() ? 'Other Releases' : 'Autres versions';
+            document.getElementById('previous-title').innerText = isFrench() ? 'Previous' : 'Précédent';
+            document.getElementById('dev-releases-title').innerText = isFrench() ? 'Dev Releases' : 'Versions de développement';
+            document.getElementById('dev-releases-message').innerText = isFrench() ? 'Currently, none :(' : 'Actuellement, aucun :(';
+            document.getElementById('navigate-button').innerText = isFrench() ? 'Go to Main' : 'Aller à l\'accueil';
         });
     </script>
 </body>
 </html>
-
